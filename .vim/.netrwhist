@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/linisaac/Desktop'
+let g:netrw_dirhist_2='/Users/linisaac/Desktop/[ www.Torrentday.com ] - Fury.2014.DVDScr.X264.AC3-BHRG'
+let g:netrw_dirhist_3='/Users/linisaac/Desktop'
+let g:netrw_dirhist_4='/Users/linisaac/SourceCode/oxoffice'
+let g:netrw_dirhist_5='/Users/linisaac/SourceCode/oxoffice/lib'
+let g:netrw_dirhist_6='/Users/linisaac/.vim_backup'
