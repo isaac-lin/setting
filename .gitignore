@@ -1,0 +1,12 @@
+# Vundle-managed plugins, restore with :PluginInstall
+.vim/bundle/
+
+# Runtime state, not configuration
+.vim/backup/
+.vim/.netrwhist
+.viminfo
+
+# Vim swap files
+*.swp
+*.swo
+*~
