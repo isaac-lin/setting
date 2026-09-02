@@ -243,4 +243,4 @@ esac
 ## ------------------------------
 
 ## Define any user-specific variables you want here.
-#source ~/.bashrc_custom
+source ~/.bashrc_custom
