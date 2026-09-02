@@ -1,3 +1,18 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'preservim/nerdtree'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-test/vim-test'
+Plugin 'tpope/vim-dispatch'
+"Plugin 'ycm-core/YouCompleteMe'
+call vundle#end()
+filetype plugin indent on
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -50,10 +65,12 @@ map ][ /}<CR>b99]}
 map ]] j0[[%/{<CR>
 map [] k$][%?}<CR>
 
+nmap <F1> maV?function<CR>0y`ao<Esc>pzz
+
 set tabstop=3
 set shiftwidth=3
 set nu
-set cursorline
+"set cursorline
 "autocmd InsertLeave * hi clear
 "autocmd InsertEnter * hi cursorline term=none cterm=none
 ""hi CursorLine   cterm=NONE ctermbg=none ctermfg=white guibg=ligtblue guifg=lightblue
@@ -96,11 +113,24 @@ map Q gq
 " This is an alternative that also works in block mode, but the deleted
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
+" noremap % v%
 
+" set ctags
 set tags=./tags;../tags;../../tags;../../../tags;../../../../tags;../../../../../tags;../../../../../tags;
 map <C-]> g<C-]>
 
-" ≥o¨q•Œ®”®œ vim •i•H®œ•Œ√C¶‚
+" set cscope
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+
+" ?o?q?Œ®”®? vim ?i?H?œ•??C??
 if has("termino")
   set t_Co=8
   set t_Sf=[3%p1%dm
@@ -115,7 +145,7 @@ endif
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
-"  set hlsearch
+  set hlsearch
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -139,4 +169,4 @@ if has("autocmd")
     \ endif
 
 endif " has("autocmd")
-source ~/.vim/colors/syncolor.vim
+source ~/.vim/color/syncolor.vim
